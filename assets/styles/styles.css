@@ -18,13 +18,16 @@ body {
   line-height: 1.5;
   --background-color: rgba(148, 253, 127, 0.247);
   --secondary-text-color: #181820;
-  --primary-text-color: #5c5c62;
+  --primary-text-color: #5b5b61;
+  --secondary-night-text-color: #ccfacf;
+  --primary-night-text-color: #e9f7ec;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
   --border-color: #ff9a0045;
   --shadow-color: #000;
   --light-gray-bg: rgba(0, 0, 0, 0.04);
   --resume-background-color: rgb(254, 255, 219);
+  --resume-night-background-color: rgb(20, 19, 34);
   background: var(--background-color);
 }
 
@@ -53,6 +56,29 @@ body {
   padding: 30px 0;
   max-width: 900px;
   background: var(--resume-background-color);
+}
+
+@media only screen {
+  .resume:hover {
+    box-shadow: 0 0 15px 0 rgba(34, 36, 38, 0.3);
+    background: var(--resume-night-background-color);
+    color: var(--secondary-night-text-color);
+  }
+
+  .resume:hover .contact-info__header,
+  .resume:hover .intro_text,
+  .resume:hover .preferences__text {
+    color: var(--secondary-night-text-color);
+  }
+
+  .resume:hover .resume__sub-header,
+  .resume:hover .contact-info__item {
+    color: var(--primary-night-text-color);
+  }
+
+  .resume:hover .preferences__img {
+    background: url(/assets/img/Night.png);
+  }
 }
 
 .resume__block {
@@ -259,4 +285,19 @@ body {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 550px) {
+  .preferences-content__container {
+    flex-direction: column;
+    height: auto;
+  }
+  .preferences__img {
+    width: 20rem;
+    height: 20rem;
+    margin-top: 1rem;
+  }
+  .like-dislike__container {
+    width: 100%;
+  }
 }
